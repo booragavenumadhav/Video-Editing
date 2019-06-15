@@ -1,10 +1,14 @@
-#Comments are coming in next update
+#Importing required packages
 import cv2
 from skimage.measure import compare_ssim
 images=[]
-vidObj=cv2.VideoCapture("onlyus.mp4")
-success,old_image=vidObj.read()
-grayA=cv2.cvtColor(old_image,cv2.COLOR_BGR2GRAY)
+source_file="onlyus.mp4"
+dest_file='out.mp4'
+video_format=cv2.VideoWriter_fourcc(*'DIVX')
+fps=2
+vidObj=cv2.VideoCapture(source_file) #reading the video path
+success,old_image=vidObj.read() #Getting a frame from the video
+grayA=cv2.cvtColor(old_image,cv2.COLOR_BGR2GRAY) # Converting the frame into gray for easier calculation
 height,width,layers=old_image.shape
 size=(width,height)
 while True:
@@ -12,13 +16,12 @@ while True:
     if not success:
         break
     grayB=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-    score=compare_ssim(grayA,grayB)
+    score=compare_ssim(grayA,grayB) # comparing two frames
     if(score<0.5):
         images.append(old_image)
-        print("Working")
     grayA=grayB
     old_image=image
-out=cv2.VideoWriter('out.avi',cv2.VideoWriter_fourcc(*'DIVX'),2,size)
+out=cv2.VideoWriter(dest_file,video_format,fps,size)
 for i in range(len(images)):
     out.write(images[i])
 out.release()
