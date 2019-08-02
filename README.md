@@ -8,10 +8,10 @@ If you don't have either of those you can install them using pip command below.
 
 ### Future Works/Ideas:
 
--I also want to add an feature which is featured in [carykh's video](https://youtu.be/DQ8orIurGxw).
--While looking throgh carykh [code](https://github.com/carykh/jumpcutter) I noticed a command line tool called [ffmpeg](https://ffmpeg.org/) which is used to transfer the video into frames and viceversa(various other uses like cropping,etc) so I thinking of migrating to it instead of using CV2.Let's see how it goes
--I also learnt that so many video editors uses ffmpeg as a subprocess to get the job done for editing and stuff so want to look into it and see where it goes.
-
+- I also want to add an feature which is featured in [carykh's video](https://youtu.be/DQ8orIurGxw).
+- While looking throgh carykh [code](https://github.com/carykh/jumpcutter) I noticed a command line tool called [ffmpeg](https://ffmpeg.org/) which is used to transfer the video into frames and viceversa(various other uses like cropping,etc) so I thinking of migrating to it instead of using CV2.Let's see how it goes
+- I want to develop the project while using as minimum packages as possible so might start over once I got implemented some of the features
+- I also learnt that so many video editors uses ffmpeg as a subprocess to get the job done for editing and stuff so want to look into it and see where it goes.
 
 
 And I almost forgot 
