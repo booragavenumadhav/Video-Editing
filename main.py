@@ -2,7 +2,7 @@
 import cv2
 from skimage.measure import compare_ssim
 images=[]
-source_file="onlyus.mp4"
+source_file=input('Enter the source name with extension')
 dest_file='out.mp4'
 video_format=cv2.VideoWriter_fourcc(*'DIVX')
 fps=2
